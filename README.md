@@ -35,7 +35,7 @@ What I'd like is to have some good control over the thing. The ADC sampling for 
 I chose to go with Arduino as IDE for this project. With the STM32-series being to exactly well supported compared to other boards in that realm, it still presented good enough of a challenge to be fun.
 To get the device to work in the Arduino environment, the STM32duino project provides everything we need, as support for STM32F401CC already exists since someone worked up the support for it on a Blackpill variant with that MCU.
 
-There are at least two Arduino SCPI interpreters available, I went for the Vrekrer SCPI Parser for this project.
+There are at least two Arduino SCPI interpreters available, I went for the Vrekrer SCPI Parser for this project. You can either fetch it from github or add it from the Arduino library manager.
 
 One of the features I wanted to implement and experiment with is pre-accumulation. By this I mean to repeatedly sample the ADC and accumulate its value in software to get a wider numerical resolution of the output data value.
 
