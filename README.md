@@ -85,5 +85,6 @@ Where the data after "P:" is the power, given in the output units set. The data 
 * DATA:PUSH - Set data upstream push, data is pushed out when acquired (0=Off, 1=On)
 
 ## To-do:
-Frequency calibration table support
-
+* Frequency calibration table support
+* Analog level trigger for measurement
+* N-length acquisition support
