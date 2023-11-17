@@ -28,12 +28,18 @@ The bootloader works by sending a soft reboot command, followed by some usb comm
 When you install the bootloader, remember to upload something which has support for the HID bootloader for the bootloader to boot at 0x8004000. I have uploaded a "Hello World" example for that purpose here: https://drive.google.com/file/d/19KSJot1h6KMrcqswOiS8wQ07hAWFRFDQ/view?usp=sharing
 
 ### Note: be careful with the board settings in the Arduino GUI. The USB USART must be enabled, or you will get locked out and have to upload hello world again with STM32CubeProgrammer again
+Board: "Generic STM32F4 series"
+Board part number: "BlackPill F401CC"
+U(S)ART support: "Enabled (generic 'Serial')"
+USB support (if available): "CDC (generic 'Serial' supersede U(S)ART)"
+USB speed (if available): "Low/Full Speed"
+Upload method: "HID Bootloader 2.2"
 
 ## Design ideas
 What I'd like is to have some good control over the thing. The ADC sampling for instance, add some timestamping and pre-accumulation of upstream data for a start. And of course, SCPI command interface!
 
 I chose to go with Arduino as IDE for this project. With the STM32-series being to exactly well supported compared to other boards in that realm, it still presented good enough of a challenge to be fun.
-To get the device to work in the Arduino environment, the STM32duino project provides everything we need, as support for STM32F401CC already exists since someone worked up the support for it on a Blackpill variant with that MCU.
+To get the device to work in the Arduino environment, the STM32duino project provides everything we need, as support for STM32F401CC already exists since someone worked up the support for it on a Blackpill variant with that MCU. See https://github.com/stm32duino/Arduino_Core_STM32/wiki/Getting-Started on how to get STM32duino installed.
 
 There are at least two Arduino SCPI interpreters available, I went for the Vrekrer SCPI Parser for this project. You can either fetch it from github or add it from the Arduino library manager.
 
